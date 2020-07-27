@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>按钮控制背景色</title>
+    <style>
+      .btnBackground1 {
+        background: crimson;
+      }
+      .btnBackground2 {
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo">
+      <input
+        type="button"
+        value="点击我"
+        :class="{btnBackground1:isActive1,btnBackground2:isActive2}"
+        @click="changeColor"
+      />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>
+      //需求：设置一个按钮，点击进行背景色切换
+      var Demo = new Vue({
+        el: "#demo",
+        data: {
+          isActive1: true,
+          isActive2: false,
+        },
+        methods: {
+          changeColor() {
+            if (this.isActive1 === true && this.isActive2 === false) {
+              this.isActive1 = !this.isActive1;
+              this.isActive2 = !this.isActive2;
+            } else {
+              this.isActive1 = this.isActive2;
+              this.isActive2 = false;
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
