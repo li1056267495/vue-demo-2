@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方法与事件绑定</title>
+  </head>
+  <body>
+    <div id="app">
+      不加参数<br>
+      点击次数： {{count}} <br>
+      <button @click="countNum">点击次数加1</button>
+      <hr>
+      绑定一个方法：有参数，必须加括号<br>
+      <button @click="handle()">点击次数加1</button>
+      <button @click="handle(8)">点击次数加8</button>
+      
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>var app = new Vue({
+  el: "#app",
+  data: {
+    count: 0
+  },
+  methods: {
+    countNum: function countNum() {
+      this.count += 1;
+    },
+    handle: function handle(count) {
+      count = count || 1;
+      this.count += count;
+    }
+  }
+});</script>
+  </div></body>
+</html>
