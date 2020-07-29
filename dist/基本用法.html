@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      v-model的用法：
+      <hr>
+      input和textarea的用法：
+      <br>
+      <input type="text" v-model="value">
+      {{value}} <br>
+      <br>
+      <textarea name="" id="" cols="30" rows="2" v-model="msg">
+初始文本</textarea>{{msg}}
+      <hr>
+      单选框：<br>
+      单个单选框：<br>
+      <input type="radio" name="" :checked="onRadio"><br>
+      多个单选框：<br>
+      <input type="radio" name="checks" value="刘备" v-model="checkName">刘备<br>
+      <input type="radio" name="checks" value="曹操" v-model="checkName">曹操<br>
+      <input type="radio" name="checks" value="孙权" v-model="checkName">孙权<br>-------现在选中了{{checkName}}
+      <hr>
+      单个复选框：<br>
+      v-bind绑定----<input type="checkbox" :checked="onRadio"><br>
+      v-model绑定----<input type="checkbox" v-model="onRadio"><br>
+      ------现在选中了{{onRadio}}
+      <br>----------------------------------- <br>
+      多个单选框：<br>
+      <input type="checkbox" value="刘备" v-model="checks">刘备<br>
+      <input type="checkbox" value="曹操" v-model="checks">曹操<br>
+      <input type="checkbox" value="孙权" v-model="checks">孙权<br>
+      -------现在选中了{{checks}}
+      <hr>
+      单选下拉框：<br>
+      <select v-model="selected">
+        <option value="刘备">刘备</option>
+        <option value="曹操">曹操</option>
+        <option value="孙权">孙权</option><br> </select>--------现在选中了{{selected}}
+      <hr>
+      多选下拉框：<br>
+      <select v-model="selecTed" multiple="">
+        <option value="刘备">刘备</option>
+        <option value="曹操">曹操</option>
+        <option value="孙权">孙权</option><br> </select>--------现在选中了{{selecTed}}
+      <hr style="color: red;">
+      绑定值：<br>
+      单选按钮：
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script>var app = new Vue({
+  el: "#app",
+  data: {
+    value: "",
+    msg: "",
+    onRadio: false,
+    checkName: "",
+    checks: [],
+    selected: "",
+    selecTed: []
+  }
+});</script>
+  </body>
+</html>

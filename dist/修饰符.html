@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>方法与事件绑定</title>
   </head>
   <body>
@@ -31,30 +31,28 @@
     
       
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script>
-      var app = new Vue({
-        el: "#app",
-        data: {
-          count:0,
-        },
-        methods:{
-          divClick(){
-            alert("div被点击了")
-          },
-          bntClick(){
-            alert("按钮被点击")
-          },
-          handle(){
-            alert("提交事件不重载页面")
-          },
-          matchNoe(){
-            alert("执行多少次了？")
-          },
-          submitMe(){
-            alert("您点击了键盘enter")
-          }
-        }
-      })
-    </script>
-  </body>
+    <script>var app = new Vue({
+  el: "#app",
+  data: {
+    count: 0
+  },
+  methods: {
+    divClick: function divClick() {
+      alert("div被点击了");
+    },
+    bntClick: function bntClick() {
+      alert("按钮被点击");
+    },
+    handle: function handle() {
+      alert("提交事件不重载页面");
+    },
+    matchNoe: function matchNoe() {
+      alert("执行多少次了？");
+    },
+    submitMe: function submitMe() {
+      alert("您点击了键盘enter");
+    }
+  }
+});</script>
+  </div></body>
 </html>
