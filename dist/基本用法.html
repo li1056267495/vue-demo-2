@@ -19,7 +19,7 @@
       <hr>
       单选框：<br>
       单个单选框：<br>
-      <input type="radio" name="" :checked="onRadio"><br>
+
       多个单选框：<br>
       <input type="radio" name="checks" value="刘备" v-model="checkName">刘备<br>
       <input type="radio" name="checks" value="曹操" v-model="checkName">曹操<br>
@@ -30,7 +30,7 @@
       v-model绑定----<input type="checkbox" v-model="onRadio"><br>
       ------现在选中了{{onRadio}}
       <br>----------------------------------- <br>
-      多个单选框：<br>
+      多个复选框：<br>
       <input type="checkbox" value="刘备" v-model="checks">刘备<br>
       <input type="checkbox" value="曹操" v-model="checks">曹操<br>
       <input type="checkbox" value="孙权" v-model="checks">孙权<br>
@@ -49,20 +49,50 @@
         <option value="孙权">孙权</option><br> </select>--------现在选中了{{selecTed}}
       <hr style="color: red;">
       绑定值：<br>
-      单选按钮：
+      单选按钮：<br>
+      <input type="radio" v-model="page" v-bind:value="value">-----现在选中了{{page}} <br>---------------- <br>
+      复选框：选中和不选中的value值不一样<br>
+      <input type="checkbox" v-model="gle" :true-value="value1" :false-value="value2">
+      <br>
+      ---------{{gle}} <br>
+      ---------被选中：{{gle===value1}} <br>
+      ---------未被选中：{{gle===value2}} <br>
+      --------------------<br>
+      下拉框: <br>
+      <select v-model="valueSelect" :value="{num:111}">
+        <option value="刘备">刘备</option>
+        <option value="曹操">曹操</option>
+        <option value="孙权">孙权</option><br> </select>--------现在选中了{{typeof valueSelect}} <br>
+      <hr>
+      修饰符：<br>
+      lazy: <br>
+      <input type="text" v-model="inputStr">{{inputStr}}<br>
+      <input type="text" v-model.lazy="lazyStr">{{lazyStr}} <br>
+      -----------<br>
+      number: <br>
+      <input type="text" v-model.number="isNum">{{typeof isNum}}
+      <br>----------------------------------- <br>
+      trim: <br>
+      <input type="text" v-model="isTrim1">{{isTrim1.split('').length}} <br>
+      <input type="text" v-model.trim="isTrim2">{{isTrim2.split('').length}}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script>var app = new Vue({
+    <script>var _data;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var app = new Vue({
   el: "#app",
-  data: {
+  data: (_data = {
     value: "",
     msg: "",
     onRadio: false,
     checkName: "",
     checks: [],
     selected: "",
-    selecTed: []
-  }
+    selecTed: [],
+    page: true
+  }, _defineProperty(_data, "value", "111"), _defineProperty(_data, "gle", true), _defineProperty(_data, "value1", "我被选中了"), _defineProperty(_data, "value2", "我没被选中"), _defineProperty(_data, "valueSelect", ""), _defineProperty(_data, "inputStr", ""), _defineProperty(_data, "lazyStr", ""), _defineProperty(_data, "isNum", ""), _defineProperty(_data, "isTrim1", ""), _defineProperty(_data, "isTrim2", ""), _data)
 });</script>
   </body>
 </html>
